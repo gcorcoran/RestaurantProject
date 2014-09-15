@@ -1,0 +1,38 @@
+.ending{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+.leading{
+    font-size: 50px;
+    font-style: italic;
+    font-family: 'Oswald', sans-serif;
+}
+header{
+    background-color:#C0C0C0;
+}
+.box{
+    display:inline-block;
+    width:400px;
+    /* border:1px solid; */
+    vertical-align:top;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+}
+.categories{
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+}
+.itemName{
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+}
+.itemDescription{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+.itemPrice{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
