@@ -1,3 +1,6 @@
+body{
+    background-color:#F0F0F0;
+}
 .ending{
     font-size: 20px;
     font-weight: bold;
@@ -27,6 +30,7 @@ header{
 .itemName{
     font-family: 'Raleway', sans-serif;
     font-size: 30px;
+    background-color:#C0C0C0;
 }
 .itemDescription{
     font-family: 'Raleway', sans-serif;
