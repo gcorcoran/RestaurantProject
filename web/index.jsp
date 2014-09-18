@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link href="styles.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
+        <title>Carmen's Bar & Grill</title>
     </head>
     <header>
         <span class="leading">carmen's</span><span class="ending">BAR & GRILL</span>
@@ -36,23 +36,29 @@
 
                         out.print("<div class=\"itemName\" name=\"name\">" + categories.get(i).getItems().get(j).getName() + "</div>" + "<br>");
                         out.print("<div class=\"itemDescription\" name=\"description\">" + categories.get(i).getItems().get(j).getDescription() + "</div>" + "<br>");
-                        out.print("<div class=\"itemPrice\" name=\"price\">" + categories.get(i).getItems().get(j).getPrice() + "</div>");
-                        out.print("<input type=\"submit\" name=\"submit\" /></form>");
+                        out.print("<div class=\"itemPrice\" name=\"price\">" + categories.get(i).getItems().get(j).getPrice()+ "  ");
+                        out.print("<input type=\"submit\" name=\"submit\" value=\"Add\"/></form>" + "</div>");
                     }
                     out.print("</div>");
                 }
         %>
-        <div class="cart">
+        <div class="box">
             <%
                     Object obj2 = session.getAttribute("cart");
                     Cart cart= (Cart)obj2;
                     if (cart == null) {
-                        out.println("<h1>RESULTS WILL SHOW HERE</h1>");
+                        //out.println("<h1>RESULTS WILL SHOW HERE</h1>");
                     } else {
-                        out.println("<h1>" + cart.toString() + "</h1>");
+                        out.print("<div class=\"box\">");
+                        out.print("<div class=\"itemName\">" + "You Selected:" + "</div>" + "<br>");
+                        out.println("<p>" + cart.toString() + "</p>");
+                        out.print("</div>");
                     }
                 }
             %>
+            <form method="POST" action="MainController?action=checkout">
+                <input type="submit" name="submit" value="Go To Checkout"/>
+            </form>
         </div>
     </body>
 </html>

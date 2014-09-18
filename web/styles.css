@@ -16,7 +16,7 @@ header{
 }
 .box{
     display:inline-block;
-    width:400px;
+    width:300px;
     /* border:1px solid; */
     vertical-align:top;
     margin-left: auto;
@@ -39,4 +39,17 @@ header{
 .itemPrice{
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
+}
+.itemPrint{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+input[type=submit]{
+    padding:5px 15px; 
+    background:#C0C0C0; 
+    border:0 none;
+    cursor:pointer;
+    font-family: 'Raleway', sans-serif;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
 }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package controller;
 
 import java.io.IOException;
@@ -40,39 +39,38 @@ public class MainController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        String pageDestination = "/index.jsp";
         String action = request.getParameter("action");
         String ID = request.getParameter("ID");
         Cart myCart = new Cart();
         HttpSession session = request.getSession();
-        if(action.equals("getOriginalList")){
+        if (action.equals("getOriginalList")) {
             DataAccessService menu = new DataAccessService();
             List<Category> categories = menu.getCategories();
             request.setAttribute("menuItems", categories);
-        }else if(action.equals("addToCart")){
-                DataAccessService menu = new DataAccessService();
-                ID = request.getParameter("ID");
-                myCart.addToCart(menu.getItemByID(ID));
-                session.setAttribute("cart", myCart);
-                
+        } else if (action.equals("addToCart")) {
+            DataAccessService menu = new DataAccessService();
+            Object obj2 = session.getAttribute("cart");
+            if (obj2 != null) {
+                myCart = (Cart) obj2;
             }
-        
-        
-        
-        
-        
+            ID = request.getParameter("ID");
+            myCart.addToCart(menu.getItemByID(ID));
+            session.setAttribute("cart", myCart);
+
+        } else if (action.equals("checkout")){
+            pageDestination = "/checkout.jsp";
+        }
+
 //        String name = request.getParameter("name");
 //        String description = request.getParameter("description");
 //        String price = request.getParameter("price");
         //Cart myCart = new Cart();
         //Item temp = new Item(name,description,price);
         //myCart.addToCart(temp);
-        
         //String cart = myCart.toString();
-        
         //request.setAttribute("cart", cart);
-       
-        RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+        RequestDispatcher view = request.getRequestDispatcher(pageDestination);
         view.forward(request, response);
     }
 
