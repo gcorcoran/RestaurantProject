@@ -16,4 +16,5 @@ public interface DataAccessStrategy {
     
     public List<Category> getCategories();
     
+    public Item getItemByID(String ID);
 }

@@ -41,6 +41,10 @@ public class Category {
         return items;
     }
     
+    public Item getItem(int number){
+        return this.items.get(number);
+    }
+    
     public void addItem(Item item){
         
         items.add(item);
@@ -50,6 +54,8 @@ public class Category {
         this.items = items;
     }
     
-    
+    public int getItemListLength(){
+        return this.items.size();
+    }
     
 }

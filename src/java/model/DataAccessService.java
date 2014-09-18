@@ -32,5 +32,10 @@ public class DataAccessService {
         this.DataSource = DataSource;
     }
     
+    public Item getItemByID(String ID){
+        //Item item = this.getDataSource().getItemByID(ID);
+        return this.getDataSource().getItemByID(ID);
+    }
+    
     
 }

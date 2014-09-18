@@ -25,8 +25,7 @@ public class Cart {
     
     public void addToCart(Item item){
         selectedItems.add(item);
-        Double temp = 2.0;
-        subtotal+=temp;
+        subtotal+=Double.parseDouble(item.getPrice());
     }
 
     public List<Item> getSelectedItems() {
